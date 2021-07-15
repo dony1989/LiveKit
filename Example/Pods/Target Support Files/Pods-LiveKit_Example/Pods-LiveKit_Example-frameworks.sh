@@ -175,13 +175,9 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/HandyFrame/HandyFrame.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LiveKit/LiveKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/HandyFrame/HandyFrame.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LiveKit/LiveKit.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

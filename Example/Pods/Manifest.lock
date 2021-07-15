@@ -1,47 +1,16 @@
 PODS:
-  - AFNetworking (2.7.0):
-    - AFNetworking/NSURLConnection (= 2.7.0)
-    - AFNetworking/NSURLSession (= 2.7.0)
-    - AFNetworking/Reachability (= 2.7.0)
-    - AFNetworking/Security (= 2.7.0)
-    - AFNetworking/Serialization (= 2.7.0)
-    - AFNetworking/UIKit (= 2.7.0)
-  - AFNetworking/NSURLConnection (2.7.0):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.7.0):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.7.0)
-  - AFNetworking/Security (2.7.0)
-  - AFNetworking/Serialization (2.7.0)
-  - AFNetworking/UIKit (2.7.0):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
-  - HandyFrame (1.2.0)
-  - LiveKit (0.1.0):
-    - AFNetworking (~> 2.3)
-    - HandyFrame
+  - LiveKit (0.1.0)
 
 DEPENDENCIES:
   - LiveKit (from `../`)
-
-SPEC REPOS:
-  trunk:
-    - AFNetworking
-    - HandyFrame
 
 EXTERNAL SOURCES:
   LiveKit:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AFNetworking: 8dd5f9b9691e09186393069a12cc3b5ed7c8b511
-  HandyFrame: 437df83ba7563c56cd55b9bd0128561995463110
-  LiveKit: 1db09d68ab890b6562ee7e9fb6ffe7b10ce3813a
+  LiveKit: 3decb013a56ac6d61ecc146ae57d8e778c442fb1
 
-PODFILE CHECKSUM: dc4148ce15789f6127810b03e6b30d6b3e822864
+PODFILE CHECKSUM: 4d0ed8dcf70faf69abfcdc700f7d3e32768d8034
 
 COCOAPODS: 1.10.1

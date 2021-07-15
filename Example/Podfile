@@ -11,3 +11,15 @@ target 'LiveKit_Example' do
     
   end
 end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      if (config.name == 'Debug' || config.name == 'AdHoc')
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)','DEBUG=1']
+      else
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)']
+      end
+    end
+  end
+end
