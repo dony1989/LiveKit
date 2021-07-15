@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'LiveKit_Example' do
+  pod 'LiveKit', :path => '../'
+
+  target 'LiveKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
