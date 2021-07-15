@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LiveKit'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'A short description of LiveKit.'
 
 # This description is used to generate tags and improve search results.
@@ -37,8 +37,8 @@ TODO: Add long description of the pod here.
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  #s.dependency 'AFNetworking', '~> 2.3'
-  #s.dependency 'HandyFrame'
+  s.frameworks = 'Foundation', 'UIKit'
+  s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'HandyFrame'
 
 end
