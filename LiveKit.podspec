@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LiveKit'
-  s.version          = '0.1.2'
+  s.version          = '0.1.5'
   s.summary          = 'A short description of LiveKit.'
 
 # This description is used to generate tags and improve search results.
@@ -32,13 +32,17 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'LiveKit/Classes/**/*'
 
-  # s.resource_bundles = {
-  #   'LiveKit' => ['LiveKit/Assets/*.png']
-  # }
+  s.resource_bundles = {
+    'LiveKit' => ['LiveKit/Assets/*.png']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'Foundation', 'UIKit'
-  s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'AFNetworking'
   s.dependency 'HandyFrame'
-
+  s.dependency 'CTMediator'
+  s.dependency 'SDWebImage'
+  s.dependency 'MJRefresh'
+  s.dependency 'MJExtension'
+  s.dependency 'Masonry'
 end

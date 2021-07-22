@@ -1,15 +1,62 @@
 PODS:
-  - LiveKit (0.1.0)
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - CTMediator (46)
+  - HandyFrame (1.2.0)
+  - LiveKit (0.1.3):
+    - AFNetworking
+    - CTMediator
+    - HandyFrame
+    - Masonry
+    - MJExtension
+    - MJRefresh
+    - SDWebImage
+  - Masonry (1.1.0)
+  - MJExtension (3.2.4)
+  - MJRefresh (3.5.0)
+  - SDWebImage (5.11.0):
+    - SDWebImage/Core (= 5.11.0)
+  - SDWebImage/Core (5.11.0)
 
 DEPENDENCIES:
   - LiveKit (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - CTMediator
+    - HandyFrame
+    - Masonry
+    - MJExtension
+    - MJRefresh
+    - SDWebImage
 
 EXTERNAL SOURCES:
   LiveKit:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LiveKit: 3decb013a56ac6d61ecc146ae57d8e778c442fb1
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  CTMediator: f1cf58d509fb3192086c367711f039efd769b907
+  HandyFrame: 437df83ba7563c56cd55b9bd0128561995463110
+  LiveKit: 4883a7b9f4e217e7ca5caffa4de74985784fbd7a
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJExtension: 88e0900751b6cac8de1cf724ca9838a0b28d5acb
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
+  SDWebImage: 7acbb57630ac7db4a495547fb73916ff3e432f6b
 
 PODFILE CHECKSUM: 4d0ed8dcf70faf69abfcdc700f7d3e32768d8034
 
