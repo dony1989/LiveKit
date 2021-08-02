@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Target_LiveModule : NSObject
+@interface Target_YYLLModule : NSObject
 - (UIViewController *)Action_getLiveViewController:(NSDictionary *)params;
 
 @end

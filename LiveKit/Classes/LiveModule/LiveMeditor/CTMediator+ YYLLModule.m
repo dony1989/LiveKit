@@ -5,13 +5,13 @@
 //  Created by don on 2021/7/19.
 //
 
-#import "CTMediator+LiveModule.h"
+#import "CTMediator+YYLLModule.h"
 
 NSString * const kLiveModuleTarget = @"LiveModule";
 NSString * const kLiveModuleViewController = @"getLiveViewController";
 
 
-@implementation CTMediator (LiveModule)
+@implementation CTMediator (YYLLModule)
 - (UIViewController *)CTMediator_LiveViewController
 {
     UIViewController *viewController = [self performTarget:kLiveModuleTarget

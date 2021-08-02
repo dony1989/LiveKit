@@ -6,13 +6,13 @@
 //
 
 #import "NSObject+Base.h"
-#import "LiveAppConfig.h"
+#import "YYLLAppConfig.h"
 #import "LiveModuleCategoryHeader.h"
 
 @implementation NSString (URL)
 
 - (NSString * __nullable)scheme {
-    if (LiveIsStringNotEmpty(self)) {
+    if (YYLLIsStringNotEmpty(self)) {
         NSURLComponents *components = [[NSURLComponents alloc] initWithString:self];
         if (components) {
             return components.scheme;
@@ -22,7 +22,7 @@
 }
 
 - (NSString * __nullable)host {
-    if (LiveIsStringNotEmpty(self)) {
+    if (YYLLIsStringNotEmpty(self)) {
         NSURLComponents *components = [[NSURLComponents alloc] initWithString:self];
         if (components) {
             return components.host;
@@ -32,7 +32,7 @@
 }
 
 - (NSString * __nullable)path {
-    if (LiveIsStringNotEmpty(self)) {
+    if (YYLLIsStringNotEmpty(self)) {
         NSURLComponents *components = [[NSURLComponents alloc] initWithString:self];
         if (components) {
             return components.path;
@@ -42,7 +42,7 @@
 }
 
 - (NSString * __nullable)query {
-    if (LiveIsStringNotEmpty(self)) {
+    if (YYLLIsStringNotEmpty(self)) {
         NSURLComponents *components = [[NSURLComponents alloc] initWithString:self];
         if (components) {
             return components.query;
@@ -52,11 +52,11 @@
 }
 
 - (NSDictionary * __nullable)queries {
-    if (LiveIsStringNotEmpty(self)) {
+    if (YYLLIsStringNotEmpty(self)) {
         NSURLComponents *components = [[NSURLComponents alloc] initWithString:self];
         if (components) {
             NSArray *items = components.queryItems;
-            if (LiveIsArrayNotEmpty(items)) {
+            if (YYLLIsArrayNotEmpty(items)) {
                 NSMutableDictionary *queries = [NSMutableDictionary dictionary];
                 for (NSURLQueryItem *item in items) {
                     [queries setObjectSafe:item.value forKey:item.name];
@@ -69,14 +69,14 @@
 }
 
 - (NSString * __nullable)kHYURLDecodingString {
-    if (LiveIsStringNotEmpty(self)) {
+    if (YYLLIsStringNotEmpty(self)) {
         return [self stringByRemovingPercentEncoding];
     }
     return nil;
 }
 
 - (NSString * __nullable)kHYURLEncodingString {
-    if (LiveIsStringNotEmpty(self)) {
+    if (YYLLIsStringNotEmpty(self)) {
         NSString *charactersToEscape = @"?!@#$^&%*+,:;='\"`<>()[]{}/\\| ";
         NSCharacterSet *allowedCharacters = [[NSCharacterSet characterSetWithCharactersInString:charactersToEscape] invertedSet];
         NSString *encodedUrl = [self stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacters];

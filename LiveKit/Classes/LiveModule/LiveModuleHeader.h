@@ -8,8 +8,8 @@
 #ifndef LiveModuleHeader_h
 #define LiveModuleHeader_h
 
-#import "CTMediator+LiveModule.h"
-#import "Target_LiveModule.h"
-
-
+#import "CTMediator+YYLLModule.h"
+#import "Target_YYLLModule.h"
+#import "LiveModuleCategoryHeader.h"
+#import <YYKit.h>
 #endif /* LiveModuleHeader_h */

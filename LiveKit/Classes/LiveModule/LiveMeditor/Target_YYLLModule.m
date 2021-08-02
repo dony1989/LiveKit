@@ -5,10 +5,10 @@
 //  Created by don on 2021/7/19.
 //
 
-#import "Target_LiveModule.h"
+#import "Target_YYLLModule.h"
 #import "LiveMainViewController.h"
 
-@implementation Target_LiveModule
+@implementation Target_YYLLModule
 
 - (UIViewController *)Action_getLiveViewController:(NSDictionary *)params
 {

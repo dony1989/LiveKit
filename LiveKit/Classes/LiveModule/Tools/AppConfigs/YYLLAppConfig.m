@@ -5,18 +5,18 @@
 //  Created by don on 2021/7/21.
 //
 
-#import "LiveAppConfig.h"
+#import "YYLLAppConfig.h"
 
 // MARK: 屏幕尺寸
-CGFloat kLiveScreenWidth(void) {
+CGFloat kYYLLScreenWidth(void) {
     return [[UIScreen mainScreen] bounds].size.width;
 }
 
-CGFloat kLiveScreenHeight(void) {
+CGFloat kYYLLScreenHeight(void) {
     return [[UIScreen mainScreen] bounds].size.height;
 }
 
-CGFloat kLiveStatusBarHeight(void) {
+CGFloat kYYLLStatusBarHeight(void) {
     CGFloat statusBarHeight = 20;
     if (@available(iOS 13.0, *)) {
         UIStatusBarManager *statusBarManager = [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager;
@@ -26,29 +26,29 @@ CGFloat kLiveStatusBarHeight(void) {
         statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
     }
     statusBarHeight = MAX(statusBarHeight, 20);
-    return MAX(statusBarHeight, kLiveSafeAreaTop());
+    return MAX(statusBarHeight, kYYLLSafeAreaTop());
 }
 
-CGFloat kLiveSafeAreaTop(void) {
+CGFloat kYYLLSafeAreaTop(void) {
     if (@available(iOS 11, *)) {
         return [UIApplication sharedApplication].keyWindow.safeAreaInsets.top;
     }
     return 0;
 }
-CGFloat kLiveSafeAreaBottom(void) {
+CGFloat kYYLLSafeAreaBottom(void) {
     if (@available(iOS 11, *)) {
         return [UIApplication sharedApplication].keyWindow.safeAreaInsets.bottom;
     }
     return 0;
 }
 
-CGFloat kLiveSafeAreaLeft(void) {
+CGFloat kYYLLSafeAreaLeft(void) {
     if (@available(iOS 11, *)) {
         return [UIApplication sharedApplication].keyWindow.safeAreaInsets.left;
     }
     return 0;
 }
-CGFloat kLiveSafeAreaRight(void) {
+CGFloat kYYLLSafeAreaRight(void) {
     if (@available(iOS 11, *)) {
         return [UIApplication sharedApplication].keyWindow.safeAreaInsets.right;
     }
@@ -58,17 +58,17 @@ CGFloat kLiveSafeAreaRight(void) {
 BOOL kIsIphoneX_YML(void) {
     BOOL isPhoneX = NO;
     if (@available(iOS 11.0, *)) {
-        isPhoneX = kLiveSafeAreaBottom() > 0.0 || kLiveSafeAreaLeft() > 0.0;
+        isPhoneX = kYYLLSafeAreaBottom() > 0.0 || kYYLLSafeAreaLeft() > 0.0;
     }
     return isPhoneX;
 }
 
-UIInterfaceOrientation HYNowInterfaceOrientation(void) {
+UIInterfaceOrientation YYLLNowInterfaceOrientation(void) {
     return [[UIApplication sharedApplication] statusBarOrientation];
 }
 
 // MARK: 类型安全检测
-NSString *LiveSafeString(id str) {
+NSString *YYLLSafeString(id str) {
     if (str) {
         if ([str isKindOfClass:[NSString class]]) {
             if ([(NSString *)str isEqualToString:@"<null>"]) {
@@ -88,42 +88,42 @@ NSString *LiveSafeString(id str) {
     return @"";
 }
 
-BOOL LiveIsString(NSString *str) {
+BOOL YYLLIsString(NSString *str) {
     if (str && [str isKindOfClass:[NSString class]]) {
         return YES;
     }
     return NO;
 }
 
-BOOL LiveIsStringNotEmpty(NSString *str) {
+BOOL YYLLIsStringNotEmpty(NSString *str) {
     if (str && [str isKindOfClass:[NSString class]]) {
         return [(NSString *)str length] > 0;
     }
     return NO;
 }
 
-BOOL LiveIsArray(NSArray *array) {
+BOOL YYLLIsArray(NSArray *array) {
     if (array && [array isKindOfClass:[NSArray class]]) {
         return YES;
     }
     return NO;
 }
 
-BOOL LiveIsArrayNotEmpty(NSArray *array) {
+BOOL YYLLIsArrayNotEmpty(NSArray *array) {
     if (array && [array isKindOfClass:[NSArray class]]) {
         return [(NSArray *)array count] > 0;
     }
     return NO;
 }
 
-BOOL LiveIsDictionary(NSDictionary *dic) {
+BOOL YYLLIsDictionary(NSDictionary *dic) {
     if (dic && [dic isKindOfClass:[NSDictionary class]]) {
         return YES;
     }
     return NO;
 }
 
-BOOL LiveIsDictionaryNotEmpty(NSDictionary *dic) {
+BOOL YYLLIsDictionaryNotEmpty(NSDictionary *dic) {
     if (dic && [dic isKindOfClass:[NSDictionary class]]) {
         return [(NSDictionary *)dic count] > 0;
     }
@@ -131,27 +131,47 @@ BOOL LiveIsDictionaryNotEmpty(NSDictionary *dic) {
 }
 
 // MARK: 系统字体
-UIFont *LiveSystemFont(CGFloat size) {
+UIFont *YYLLSystemFont(CGFloat size) {
     return [UIFont systemFontOfSize:size];
 }
 
-UIFont *LiveSystemFontBold(CGFloat size) {
+UIFont *YYLLSystemFontBold(CGFloat size) {
     return [UIFont boldSystemFontOfSize:size];
 }
 
-UIFont *HYSystemFontWithWeight(CGFloat size, UIFontWeight weight) {
+UIFont *YYLLSystemFontWithWeight(CGFloat size, UIFontWeight weight) {
     return [UIFont systemFontOfSize:size weight:weight];
 }
 
 // MARK: 颜色
-UIColor *LiveHexColor(long hex) {
+UIColor *YYLLHexColor(long hex) {
     return [UIColor colorWithRed:((hex>>16)&0xFF)/255.0 green:((hex>>8)&0xFF)/255.0 blue:(hex&0xFF)/255.0 alpha:1.0];
 }
 
-UIColor *LiveHexColorWithAlpha(long hex, CGFloat alpha) {
+UIColor *YYLLHexColorWithAlpha(long hex, CGFloat alpha) {
     return [UIColor colorWithRed:((hex>>16)&0xFF)/255.0 green:((hex>>8)&0xFF)/255.0 blue:(hex&0xFF)/255.0 alpha:alpha];
 }
 
-@implementation LiveAppConfig
+
+// MARK: GCD封装
+void YYLLQueueAsync(dispatch_queue_t queue, dispatch_block_t block) {
+    dispatch_async(queue, block);
+}
+
+void YYLLMainQueueAsync(dispatch_block_t block) {
+    YYLLQueueAsync(dispatch_get_main_queue(), block);
+}
+
+dispatch_semaphore_t YYLLSemaCreate(intptr_t value) {
+    return dispatch_semaphore_create(value);
+}
+intptr_t YYLLSemaWait(dispatch_semaphore_t sema, dispatch_time_t time) {
+    return dispatch_semaphore_wait(sema, time);
+}
+intptr_t YYLLSemaSignal(dispatch_semaphore_t sema) {
+    return dispatch_semaphore_signal(sema);
+}
+
+@implementation YYLLAppConfig
 
 @end

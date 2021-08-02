@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CTMediator (LiveModule)
+@interface CTMediator (YYLLModule)
 
 - (UIViewController *)CTMediator_LiveViewController;
 
