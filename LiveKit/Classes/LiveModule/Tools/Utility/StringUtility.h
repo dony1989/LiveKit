@@ -42,16 +42,6 @@
 + (NSMutableAttributedString *)createAttribute:(NSString *)content contentFont:(UIFont *)font color:(UIColor *)color isAlignmentCenter:(BOOL)center;
 + (NSMutableAttributedString *)createAttribute:(NSString *)content contentFont:(UIFont *)font isAlignmentCenter:(BOOL)center;
 + (NSMutableAttributedString *)createHtmlAttribute:(NSString *)content contentFont:(UIFont *)font;
-
-+ (NSMutableAttributedString *)getYYAttributeText:(NSString*)targetString lineSpacing:(NSInteger)lineSpacing font:(UIFont *)font textColor:(UIColor *)textColor;
-+ (CGFloat)calculateHeightOfAttributeString:(NSAttributedString *)attString width:(CGFloat)width;
-+ (CGFloat)calculateWidthOfAttributeStringInMainThread:(NSAttributedString *)attString;
-
-/// YYLabel使用
-+ (CGFloat)calculateYYLabelHeightOfAttributeStringInMainThread:(NSAttributedString *)attString width:(CGFloat)width numberOfLines:(NSInteger)numberOfLines;
-/// UILabel使用
-+ (CGFloat)calculateLabelHeIghtOfAttributeStringInMainThread:(NSAttributedString *)attString width:(CGFloat)width numberOfLines:(NSInteger)numberOfLines;
-
 // ios 11之后从电话簿复制粘贴会出现特殊不可见字符 需要处理
 + (NSString *)getSeparatedPhoneNumberWithString:(NSString *)phoneString;
 /// 电话号码分割
@@ -80,11 +70,6 @@
  检查是否只包含空格
  */
 + (BOOL)checkIsOnlyContainSpace:(NSString *)string;
-
-
-// 使用YYLabel的情况下获得具体attributeString高度
-+ (CGFloat)getYYLabelAttrbuteStringHeightWithWidth:(CGFloat)width attributeString:(NSAttributedString *)attributeString;
-
 
 
 // 只包含汉字和字母

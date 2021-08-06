@@ -9,6 +9,7 @@
 
 #import "UIImage+Extension.h"
 #import "LiveModuleHeader.h"
+#import "YYLLAppConfig.h"
 
 @implementation UIImage (Extension)
 
@@ -170,7 +171,7 @@
 
 + (UIImage *)screenShotWihView:(UIView *)view
 {
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(kScreenWidth, kScreenHeight), NO, 0.0);
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(kYYLLScreenWidth(), kYYLLScreenHeight()), NO, 0.0);
     [view.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *screenShotImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

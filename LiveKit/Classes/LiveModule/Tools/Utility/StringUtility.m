@@ -8,7 +8,6 @@
 
 #import "StringUtility.h"
 #import <UIKit/UIKit.h>
-#import <YYKit/YYKit.h>
 #import <Masonry.h>
 #import "LiveModuleHeader.h"
 
@@ -53,17 +52,7 @@ static NSString *const kSpaceString_TelNo = @"  ";
     return [[NSAttributedString alloc] initWithString:string attributes:att];
 }
 
-+ (NSMutableAttributedString *)getYYAttributeText:(NSString*)targetString lineSpacing:(NSInteger)lineSpacing font:(UIFont *)font textColor:(UIColor *)textColor {
-    NSMutableAttributedString * resultAttr = [[NSMutableAttributedString alloc] initWithString:targetString];
-    //对齐方式 这里是 两边对齐
-    resultAttr.alignment = NSTextAlignmentJustified;
-    //设置行间距
-    resultAttr.lineSpacing = lineSpacing;
-    //设置字体大小
-    resultAttr.font = font;
-    resultAttr.color = textColor;
-    return resultAttr;
-}
+
 
 + (NSMutableAttributedString *)createAttribute:(NSString *)content contentFont:(UIFont *)font color:(UIColor *)color isAlignmentCenter:(BOOL)center{
     
@@ -122,110 +111,9 @@ static NSString *const kSpaceString_TelNo = @"  ";
 // TODO:lt 换个方法来计算文本高度，，不能阻塞主线程
 static UILabel *helperHeightLabel = nil;
 static UILabel *helperWidthLabel = nil;
-static YYLabel *helperHeightNumberLineYYLabel = nil;
 static UILabel *helperHeightNumberLineLabel = nil;
 
 
-+ (CGFloat)calculateHeightOfAttributeString:(NSAttributedString *)attString width:(CGFloat)width
-{
-    
-    __block CGFloat height = 0;
-    if ([NSThread currentThread].isMainThread) {
-        height = [self calculateHeightOfAttributeStringInMainThread:attString width:width];
-    }
-    else {
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            height = [self calculateHeightOfAttributeStringInMainThread:attString width:width];
-        });
-        
-    }
-    
-    return height;
-}
-
-+ (CGFloat)calculateHeightOfAttributeStringInMainThread:(NSAttributedString *)attString width:(CGFloat)width
-{
-    if (!helperHeightLabel) {
-        helperHeightLabel = [[UILabel alloc] init];
-        helperHeightLabel.numberOfLines = 0;
-    }
-    
-    helperHeightLabel.width = width;
-    helperHeightLabel.height = 3;
-    helperHeightLabel.attributedText = attString;
-    [helperHeightLabel sizeToFit];
-    return helperHeightLabel.height;
-}
-
-
-
-+ (CGFloat)calculateWidthOfAttributeStringInMainThread:(NSAttributedString *)attString
-{
-    if (!helperWidthLabel) {
-        helperWidthLabel = [[UILabel alloc] init];
-    }
-    
-    helperWidthLabel.height = 30;
-    helperWidthLabel.attributedText = attString;
-    [helperWidthLabel sizeToFit];
-    return helperWidthLabel.width;
-}
-
-/// YYLabel使用
-+ (CGFloat)calculateYYLabelHeightOfAttributeStringInMainThread:(NSAttributedString *)attString width:(CGFloat)width numberOfLines:(NSInteger)numberOfLines
-{
-    if (!helperHeightNumberLineYYLabel) {
-        helperHeightNumberLineYYLabel = [[YYLabel alloc] init];
-    }
-
-    helperHeightNumberLineYYLabel.numberOfLines = numberOfLines;
-    helperHeightNumberLineYYLabel.width = width;
-    helperHeightNumberLineYYLabel.height = 3;
-    helperHeightNumberLineYYLabel.attributedText = attString;
-    helperHeightNumberLineYYLabel.preferredMaxLayoutWidth = width;
-    helperHeightNumberLineYYLabel.textVerticalAlignment = YYTextVerticalAlignmentTop;
-    
-    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
-
-    [keyWindow addSubview:helperHeightNumberLineYYLabel];
-    [helperHeightNumberLineYYLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(keyWindow.mas_right);
-        make.width.equalTo(@(width));
-        make.top.equalTo(keyWindow.mas_bottom);
-    }];
-    [keyWindow layoutIfNeeded];
-    [keyWindow setNeedsLayout];
-    
-    CGFloat height = helperHeightNumberLineYYLabel.height;
-    [helperHeightNumberLineYYLabel removeFromSuperview];
-    return height;
-}
-/// UILabel使用
-+ (CGFloat)calculateLabelHeIghtOfAttributeStringInMainThread:(NSAttributedString *)attString width:(CGFloat)width numberOfLines:(NSInteger)numberOfLines {
-    if (!helperHeightNumberLineLabel) {
-        helperHeightNumberLineLabel = [[UILabel alloc] init];
-    }
-
-    helperHeightNumberLineLabel.numberOfLines = numberOfLines;
-    helperHeightNumberLineLabel.width = width;
-    helperHeightNumberLineLabel.height = 3;
-    helperHeightNumberLineLabel.attributedText = attString;
-    
-    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
-
-    [keyWindow addSubview:helperHeightNumberLineLabel];
-    [helperHeightNumberLineLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(keyWindow.mas_right);
-        make.width.equalTo(@(width));
-        make.top.equalTo(keyWindow.mas_bottom);
-    }];
-    [keyWindow layoutIfNeeded];
-    [keyWindow setNeedsLayout];
-    
-    CGFloat height = helperHeightNumberLineLabel.height;
-    [helperHeightNumberLineLabel removeFromSuperview];
-    return height;
-}
 
 + (CGFloat)layoutContentWidth:(NSString *)content contentFont:(UIFont *)font limitSize:(CGSize)limitSize{
     
@@ -324,15 +212,7 @@ static UILabel *helperHeightNumberLineLabel = nil;
 }
 
 
-// 使用YYLabel的情况下获得具体attributeString高度
-+ (CGFloat)getYYLabelAttrbuteStringHeightWithWidth:(CGFloat)width attributeString:(NSAttributedString *)attributeString {
-    YYTextContainer  *titleContarer = [YYTextContainer new];
-    //限制宽度
-    titleContarer.size = CGSizeMake(width, CGFLOAT_MAX);
-    
-    YYTextLayout *titleLayout = [YYTextLayout layoutWithContainer:titleContarer text:attributeString];
-    return titleLayout.textBoundingSize.height;
-}
+
 
 // ios 11之后从电话簿复制粘贴会出现特殊不可见字符 需要处理
 + (NSString *)getSeparatedPhoneNumberWithString:(NSString *)phoneString {
