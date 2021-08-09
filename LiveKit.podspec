@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LiveKit'
-  s.version          = '0.1.14'
+  s.version          = '0.1.15'
   s.summary          = 'A short description of LiveKit.'
 
 # This description is used to generate tags and improve search results.
@@ -32,12 +32,41 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'LiveKit/Classes/**/*'
+  s.source_files = 'LiveKit/Classes/LiveModule/LiveModuleHeader.h'
 
   s.resource_bundles = {
     'LiveKit' => ['LiveKit/Assets/*']
   }
 
+  s.subspec 'Controller' do |con|
+  con.source_files = 'LiveKit/Classes/LiveModule/Controller/*'
+  con.frameworks = 'UIKit','Foundation'
+  end
+
+  s.subspec 'LiveMeditor' do |meditor|
+  meditor.source_files = 'LiveKit/Classes/LiveModule/LiveMeditor/*'
+  meditor.frameworks = 'UIKit','Foundation'
+  end
+
+  s.subspec 'NetWork' do |net|
+  net.source_files = 'LiveKit/Classes/LiveModule/NetWork/*'
+  net.frameworks = 'UIKit','Foundation'
+  end
+
+  s.subspec 'AppConfigs' do |config|
+  config.source_files = 'LiveKit/Classes/LiveModule/Tools/AppConfigs/*'
+  config.frameworks = 'UIKit','Foundation'
+  end
+
+  s.subspec 'Category' do |category|
+  category.source_files = 'LiveKit/Classes/LiveModule/Tools/Category/*'
+  category.frameworks = 'UIKit','Foundation'
+  end
+
+  s.subspec 'Utility' do |utility|
+  utility.source_files = 'LiveKit/Classes/LiveModule/Tools/Utility/*'
+  utility.frameworks = 'UIKit','Foundation'
+  end
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'Foundation', 'UIKit'
   s.dependency 'AFNetworking'

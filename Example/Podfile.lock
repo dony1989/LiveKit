@@ -15,16 +15,20 @@ PODS:
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - CTMediator (46)
+  - FLAnimatedImage (1.0.15)
   - HandyFrame (1.2.0)
-  - LiveKit (0.1.3):
+  - LiveKit (0.1.14):
     - AFNetworking
     - CTMediator
+    - FLAnimatedImage
     - HandyFrame
     - Masonry
+    - MBProgressHUD
     - MJExtension
     - MJRefresh
     - SDWebImage
   - Masonry (1.1.0)
+  - MBProgressHUD (1.2.0)
   - MJExtension (3.2.4)
   - MJRefresh (3.5.0)
   - SDWebImage (5.11.0):
@@ -38,8 +42,10 @@ SPEC REPOS:
   trunk:
     - AFNetworking
     - CTMediator
+    - FLAnimatedImage
     - HandyFrame
     - Masonry
+    - MBProgressHUD
     - MJExtension
     - MJRefresh
     - SDWebImage
@@ -51,9 +57,11 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   CTMediator: f1cf58d509fb3192086c367711f039efd769b907
+  FLAnimatedImage: dd3db277b17e909ec3c7fd41adfce79b321d960e
   HandyFrame: 437df83ba7563c56cd55b9bd0128561995463110
-  LiveKit: 4883a7b9f4e217e7ca5caffa4de74985784fbd7a
+  LiveKit: 6d4ee7f9e58e0a26457d7516b1be75846b564f1c
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJExtension: 88e0900751b6cac8de1cf724ca9838a0b28d5acb
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   SDWebImage: 7acbb57630ac7db4a495547fb73916ff3e432f6b
