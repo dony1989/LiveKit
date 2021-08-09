@@ -8,6 +8,7 @@
 #import "YYLLNetWork.h"
 #import "YYLLAppConfig.h"
 #import "YYLLNetworkRequest.h"
+#import "LiveModuleCategoryHeader.h"
 
 @interface YYLLNetWork ()
 

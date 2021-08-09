@@ -9,6 +9,7 @@
 #import "YYLLAppConfig.h"
 #import <MJExtension/MJExtension.h>
 #import "EncyptUtility.h"
+#import "LiveModuleCategoryHeader.h"
 
 @interface YYLLNetworkRequest ()
 @property (nonatomic, strong) NSURLSessionTask *task;
