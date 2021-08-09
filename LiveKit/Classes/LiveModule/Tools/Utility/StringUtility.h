@@ -49,11 +49,9 @@
 
 + (void)setTextField:(UITextField *)textField withTelNo:(NSString *)finalString;
 
-+ (CGFloat)layoutContentAttributeHeight:(NSString *)content contentFont:(UIFont *)font limitSize:(CGSize)limitSize;
 
 + (CGFloat)layoutAttributeHeight:(NSMutableAttributedString *)attribute contentFont:(UIFont *)font limitSize:(CGSize)limitSize;
 
-+ (CGFloat)layoutContenHtmltHeight:(NSString *)content contentFont:(UIFont *)font limitSize:(CGSize)limitSize;
 
 + (CGFloat)layoutContentWidth:(NSString *)content contentFont:(UIFont *)font limitSize:(CGSize)limitSize;
 

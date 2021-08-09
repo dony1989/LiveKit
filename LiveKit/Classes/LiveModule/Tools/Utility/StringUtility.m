@@ -8,7 +8,6 @@
 
 #import "StringUtility.h"
 #import <UIKit/UIKit.h>
-#import <Masonry.h>
 #import "LiveModuleHeader.h"
 
 static NSString *const kSpaceString_TelNo = @"  ";
