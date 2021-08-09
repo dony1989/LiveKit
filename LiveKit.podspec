@@ -59,7 +59,6 @@ TODO: Add long description of the pod here.
   s.subspec 'AppConfigs' do |config|
   config.source_files = 'LiveKit/Classes/LiveModule/Tools/AppConfigs/*'
   config.frameworks = 'UIKit','Foundation'
-  config.dependency 'LiveKit/Category'
   end
 
   s.subspec 'Category' do |category|
