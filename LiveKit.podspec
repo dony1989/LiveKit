@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LiveKit'
-  s.version          = '0.1.19'
+  s.version          = '0.1.20'
   s.summary          = 'A short description of LiveKit.'
 
 # This description is used to generate tags and improve search results.
@@ -65,6 +65,7 @@ TODO: Add long description of the pod here.
   s.subspec 'Category' do |category|
   category.source_files = 'LiveKit/Classes/LiveModule/Tools/Category/*'
   category.frameworks = 'UIKit','Foundation'
+  category.dependency 'LiveKit/AppConfigs'
   end
 
   s.subspec 'Utility' do |utility|

@@ -8,6 +8,7 @@
 #import "YYLLNetworkRequest.h"
 #import "YYLLAppConfig.h"
 #import <MJExtension/MJExtension.h>
+#import "EncyptUtility.h"
 
 @interface YYLLNetworkRequest ()
 @property (nonatomic, strong) NSURLSessionTask *task;
