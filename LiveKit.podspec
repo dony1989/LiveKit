@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LiveKit'
-  s.version          = '0.1.15'
+  s.version          = '0.1.16'
   s.summary          = 'A short description of LiveKit.'
 
 # This description is used to generate tags and improve search results.
@@ -46,16 +46,19 @@ TODO: Add long description of the pod here.
   s.subspec 'LiveMeditor' do |meditor|
   meditor.source_files = 'LiveKit/Classes/LiveModule/LiveMeditor/*'
   meditor.frameworks = 'UIKit','Foundation'
+  meditor.dependency 'LiveKit/Controller'
   end
 
   s.subspec 'NetWork' do |net|
   net.source_files = 'LiveKit/Classes/LiveModule/NetWork/*'
   net.frameworks = 'UIKit','Foundation'
+  net.dependency 'LiveKit/AppConfigs'
   end
 
   s.subspec 'AppConfigs' do |config|
   config.source_files = 'LiveKit/Classes/LiveModule/Tools/AppConfigs/*'
   config.frameworks = 'UIKit','Foundation'
+  config.dependency 'LiveKit/Category'
   end
 
   s.subspec 'Category' do |category|
@@ -66,6 +69,8 @@ TODO: Add long description of the pod here.
   s.subspec 'Utility' do |utility|
   utility.source_files = 'LiveKit/Classes/LiveModule/Tools/Utility/*'
   utility.frameworks = 'UIKit','Foundation'
+  utility.dependency 'LiveKit/Category'
+  utility.dependency 'LiveKit/AppConfigs'
   end
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'Foundation', 'UIKit'
