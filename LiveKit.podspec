@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LiveKit'
-  s.version          = '0.1.8'
+  s.version          = '0.1.9'
   s.summary          = 'A short description of LiveKit.'
 
 # This description is used to generate tags and improve search results.
@@ -27,9 +27,7 @@ TODO: Add long description of the pod here.
   s.author           = { 'sweed7' => 'rralun@163.com' }
   s.source           = { :git => 'https://github.com/dony1989/LiveKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-  s.pod_target_xcconfig = {
-          'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
-      }
+
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
   s.ios.deployment_target = '9.0'
@@ -49,9 +47,7 @@ TODO: Add long description of the pod here.
   s.dependency 'MJRefresh'
   s.dependency 'MJExtension'
   s.dependency 'Masonry'
-  s.dependency 'YYKit'
   s.dependency 'MBProgressHUD'
-  s.dependency 'YYKit'
   s.dependency 'FLAnimatedImage'
   s.dependency 'AFNetworking'
 end
