@@ -16,7 +16,6 @@
 #import "DictionaryUtility.h"
 #import "ImageUtility.h"
 #import "ShadowUtility.h"
-#import "StringUtility.h"
 #import "TimerCountUtility.h"
 #import "TimeUtility.h"
 #import "TimerCountUtility.h"
