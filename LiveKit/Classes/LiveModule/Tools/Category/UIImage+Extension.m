@@ -8,7 +8,6 @@
 
 
 #import "UIImage+Extension.h"
-#import "LiveModuleHeader.h"
 #import "YYLLAppConfig.h"
 
 @implementation UIImage (Extension)
