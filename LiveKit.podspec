@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LiveKit'
-  s.version          = '0.1.26'
+  s.version          = '0.1.27'
   s.summary          = 'A short description of LiveKit.'
 
 # This description is used to generate tags and improve search results.
@@ -43,22 +43,22 @@ TODO: Add long description of the pod here.
   end
 
   s.subspec 'Base' do |base|
-  utility.source_files = 'LiveKit/Classes/LiveModule/Controller/Base/*'
+  base.source_files = 'LiveKit/Classes/LiveModule/Controller/Base/*'
 
   end
 
   s.subspec 'Anchor' do |anchor|
-  utility.source_files = 'LiveKit/Classes/LiveModule/Controller/Anchor/*'
+  anchor.source_files = 'LiveKit/Classes/LiveModule/Controller/Anchor/*'
 
   end
 
   s.subspec 'Common' do |common|
-  utility.source_files = 'LiveKit/Classes/LiveModule/Controller/common/*'
+  common.source_files = 'LiveKit/Classes/LiveModule/Controller/common/*'
 
   end
 
   s.subspec 'Customer' do |customer|
-  utility.source_files = 'LiveKit/Classes/LiveModule/Controller/customer/*'
+  customer.source_files = 'LiveKit/Classes/LiveModule/Controller/customer/*'
 
   end
 
