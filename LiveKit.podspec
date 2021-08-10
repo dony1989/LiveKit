@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LiveKit'
-  s.version          = '0.1.27'
+  s.version          = '0.1.29'
   s.summary          = 'A short description of LiveKit.'
 
 # This description is used to generate tags and improve search results.
@@ -32,7 +32,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'LiveKit/Classes/LiveModule/LiveModuleHeader.h'
+  # s.source_files = 'LiveKit/Classes/LiveModule/LiveModuleHeader.h'
 
   s.resource_bundles = {
     'LiveKit' => ['LiveKit/Assets/*']
