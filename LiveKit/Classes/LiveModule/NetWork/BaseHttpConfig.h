@@ -8,6 +8,8 @@
 #ifndef BaseHttpConfig_h
 #define BaseHttpConfig_h
 
+
+
 //CCActionBlock
 typedef void (^LiveServiceSuccessWithDataBlock)(id data);
 typedef void (^LiveServiceFailureWithCodeBlock)(NSInteger errorCode, NSString *errorInfo);
