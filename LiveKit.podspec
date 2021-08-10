@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LiveKit'
-  s.version          = '0.1.23'
+  s.version          = '0.1.26'
   s.summary          = 'A short description of LiveKit.'
 
 # This description is used to generate tags and improve search results.
@@ -40,18 +40,35 @@ TODO: Add long description of the pod here.
 
   s.subspec 'Controller' do |con|
   con.source_files = 'LiveKit/Classes/LiveModule/Controller/*'
-  con.frameworks = 'UIKit','Foundation'
+  end
+
+  s.subspec 'Base' do |base|
+  utility.source_files = 'LiveKit/Classes/LiveModule/Controller/Base/*'
+
+  end
+
+  s.subspec 'Anchor' do |anchor|
+  utility.source_files = 'LiveKit/Classes/LiveModule/Controller/Anchor/*'
+
+  end
+
+  s.subspec 'Common' do |common|
+  utility.source_files = 'LiveKit/Classes/LiveModule/Controller/common/*'
+
+  end
+
+  s.subspec 'Customer' do |customer|
+  utility.source_files = 'LiveKit/Classes/LiveModule/Controller/customer/*'
+
   end
 
   s.subspec 'LiveMeditor' do |meditor|
   meditor.source_files = 'LiveKit/Classes/LiveModule/LiveMeditor/*'
-  meditor.frameworks = 'UIKit','Foundation'
   meditor.dependency 'LiveKit/Controller'
   end
 
   s.subspec 'NetWork' do |net|
   net.source_files = 'LiveKit/Classes/LiveModule/NetWork/*'
-  net.frameworks = 'UIKit','Foundation'
   net.dependency 'LiveKit/AppConfigs'
   net.dependency 'LiveKit/Utility'
   end
@@ -63,17 +80,16 @@ TODO: Add long description of the pod here.
 
   s.subspec 'Category' do |category|
   category.source_files = 'LiveKit/Classes/LiveModule/Tools/Category/*'
-  category.frameworks = 'UIKit','Foundation'
   category.dependency 'LiveKit/AppConfigs'
   end
 
   s.subspec 'Utility' do |utility|
   utility.source_files = 'LiveKit/Classes/LiveModule/Tools/Utility/*'
-  utility.frameworks = 'UIKit','Foundation'
-  utility.dependency 'LiveKit/Category'
-  utility.dependency 'LiveKit/AppConfigs'
+  #utility.dependency 'LiveKit/Category'
+  #utility.dependency 'LiveKit/AppConfigs'
   end
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+
+  s.public_header_files = 'LiveKit/Classes/LiveModule/LiveModuleHeader.h'
   s.frameworks = 'Foundation', 'UIKit'
   s.dependency 'AFNetworking'
   s.dependency 'HandyFrame'
