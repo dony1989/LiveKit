@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LiveKit'
-  s.version          = '0.1.30'
+  s.version          = '0.1.31'
   s.summary          = 'A short description of LiveKit.'
 
 # This description is used to generate tags and improve search results.
@@ -27,39 +27,38 @@ TODO: Add long description of the pod here.
   s.author           = { 'sweed7' => 'rralun@163.com' }
   s.source           = { :git => 'https://github.com/dony1989/LiveKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-  s.public_header_files = 'LiveKit/Classes/LiveModule/LiveModuleHeader.h'
 
   # s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
   s.ios.deployment_target = '9.0'
 
-  # s.source_files = 'LiveKit/Classes/LiveModule/LiveModuleHeader.h'
+  s.source_files = 'LiveKit/Classes/LiveModule/LiveModuleHeader.h'
 
   s.resource_bundles = {
     'LiveKit' => ['LiveKit/Assets/*']
   }
 
   s.subspec 'Controller' do |con|
-  con.source_files = 'LiveKit/Classes/LiveModule/Controller/*'
+  # con.source_files = 'LiveKit/Classes/LiveModule/Controller/*'
   end
 
   s.subspec 'Base' do |base|
-  base.source_files = 'LiveKit/Classes/LiveModule/Controller/Base/*'
+  # base.source_files = 'LiveKit/Classes/LiveModule/Controller/Base/*'
 
   end
 
   s.subspec 'Anchor' do |anchor|
-  anchor.source_files = 'LiveKit/Classes/LiveModule/Controller/Anchor/*'
+  # anchor.source_files = 'LiveKit/Classes/LiveModule/Controller/Anchor/*'
 
   end
 
   s.subspec 'Common' do |common|
-  common.source_files = 'LiveKit/Classes/LiveModule/Controller/common/*'
+  # common.source_files = 'LiveKit/Classes/LiveModule/Controller/common/*'
 
   end
 
   s.subspec 'Customer' do |customer|
-  customer.source_files = 'LiveKit/Classes/LiveModule/Controller/customer/*'
+  # customer.source_files = 'LiveKit/Classes/LiveModule/Controller/customer/*'
 
   end
 
