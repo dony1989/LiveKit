@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LiveKit'
-  s.version          = '0.1.29'
+  s.version          = '0.1.30'
   s.summary          = 'A short description of LiveKit.'
 
 # This description is used to generate tags and improve search results.
@@ -27,6 +27,7 @@ TODO: Add long description of the pod here.
   s.author           = { 'sweed7' => 'rralun@163.com' }
   s.source           = { :git => 'https://github.com/dony1989/LiveKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.public_header_files = 'LiveKit/Classes/LiveModule/LiveModuleHeader.h'
 
   # s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
@@ -86,10 +87,9 @@ TODO: Add long description of the pod here.
   s.subspec 'Utility' do |utility|
   utility.source_files = 'LiveKit/Classes/LiveModule/Tools/Utility/*'
   #utility.dependency 'LiveKit/Category'
-  #utility.dependency 'LiveKit/AppConfigs'
+  utility.dependency 'LiveKit/AppConfigs'
   end
 
-  s.public_header_files = 'LiveKit/Classes/LiveModule/LiveModuleHeader.h'
   s.frameworks = 'Foundation', 'UIKit'
   s.dependency 'AFNetworking'
   s.dependency 'HandyFrame'
