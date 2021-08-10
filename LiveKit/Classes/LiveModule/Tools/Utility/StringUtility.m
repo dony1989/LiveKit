@@ -7,7 +7,7 @@
 //
 
 #import "StringUtility.h"
-#import "LiveModuleHeader.h"
+#import "NSString+SafeCategory.h"
 
 @implementation StringUtility
 
