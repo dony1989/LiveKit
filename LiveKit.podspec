@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LiveKit'
-  s.version          = '0.1.33'
+  s.version          = '0.1.34'
   s.summary          = 'A short description of LiveKit.'
 
 # This description is used to generate tags and improve search results.
@@ -70,12 +70,12 @@ TODO: Add long description of the pod here.
   s.subspec 'NetWork' do |net|
   net.source_files = 'LiveKit/Classes/LiveModule/NetWork/*'
   net.dependency 'LiveKit/AppConfigs'
+  net.dependency 'LiveKit/Category'
   net.dependency 'LiveKit/Utility'
   end
 
   s.subspec 'AppConfigs' do |config|
   config.source_files = 'LiveKit/Classes/LiveModule/Tools/AppConfigs/*'
-  config.frameworks = 'UIKit','Foundation'
   end
 
   s.subspec 'Category' do |category|
@@ -99,5 +99,4 @@ TODO: Add long description of the pod here.
   s.dependency 'Masonry'
   s.dependency 'MBProgressHUD'
   s.dependency 'FLAnimatedImage'
-  s.dependency 'AFNetworking'
 end
